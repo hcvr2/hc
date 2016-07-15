@@ -286,7 +286,7 @@ html {
     background-size: 100% 100%;
     background-image: url(../img/baoX.png); no-repeat;
 }
-
+.packageInfo.trea p{display:none}
 .packageInfo.treaNum {
 		
     right: 27%;

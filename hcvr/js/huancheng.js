@@ -149,20 +149,19 @@ $('#clofri').on('click',function () {
 		
 		
 		$('.chatDiv').show();
-		
-		
-		$('#treaNum').on('click',function () {
-
-			window.location.href = 'hc/chest';
-			
-		})
-		
-		
 		$('#treaNum').removeClass('treaNum');
 		
 		$('#treaNum').addClass('trea');
 		
 		$('#treaNum').children('p').hide();
+		
+		$('.trea').on('click',function () {
+			window.location.href = 'hc/chest';
+			
+		})
+		
+		
+		
 	
 })
 
@@ -531,9 +530,9 @@ function hideGameInfo () {
 
 
 $('#treaNum').on('click',function () {
-	
-	window.location.href = 'hc/chest';
-	
+	if($('#treaNum').hasClass('trea')){
+		window.location.href = 'hc/chest';
+	}
 })
 
 
@@ -770,8 +769,7 @@ function getClickLotus (prizeName) {
 			console.log('mouse.stagex  '+krpano.get('mouse.stagex'));
 			
 			
-			//$('#treaNum').children('p').text(String(getPrizeCount));
-			$('#treaNum').children('p').text(0);
+			$('#treaNum').children('p').text(String(getPrizeCount));;
 			
 			
 		} else {
@@ -824,6 +822,8 @@ function getClickLotus (prizeName) {
 			
 			
 			$('#yinlianNum').children('p').text(String(getFLowerCount));
+			
+			
 		
 		}
 		
@@ -834,6 +834,9 @@ function getClickLotus (prizeName) {
    		console.log('clickTime from kranpo '+ krpano.get('clickTime') );
 	
 }
+
+//wcy
+$('#treaNum').children('p').text(String(getPrizeCount));
 
 
 function showTxt (ifTriggerInvite) {
@@ -923,7 +926,7 @@ function showTxt (ifTriggerInvite) {
 		setTimeout(function () {
 			
 			
-			$('#clickShow').animate({'opacity':'0'},500,function() {
+			$('#clickShow').animate({'opacity':'0'},10,function() {
 		
 			    // Animation complete.
 			    
@@ -1022,10 +1025,8 @@ function krpanoReady(krpanObj)
 			krpano.call("loadscene('scene__________');");
 			
 			
-			$('#treaNum').off('click',function () {
-	
-				window.location.href = 'hc/chest';
-				
+			$('.treaNum').on('click',function () {
+				//window.location.href = '';
 			})
 			
 			
@@ -1036,7 +1037,10 @@ function krpanoReady(krpanObj)
 			
 			
 			$('#treaNum').children('p').show();
-			
+			$('.treaNum').on('click',function () {
+				//window.location.href = '';
+				
+			})
 			
 			
 		} else if ( $('#gobtn').text() == '邀请好友' ) {
@@ -1254,20 +1258,19 @@ function krpanoReady(krpanObj)
 									
 									
 									$('.chatDiv').show();
-									
-									
-									$('#treaNum').on('click',function () {
-	
-										window.location.href = 'hc/chest';
-										
-									})
-									
-									
 									$('#treaNum').removeClass('treaNum');
 									
 									$('#treaNum').addClass('trea');
 									
 									$('#treaNum').children('p').hide();
+									
+									$('.trea').on('click',function () {
+										window.location.href = 'hc/chest';
+										
+									});
+									
+									
+									
 									
 								}
 								
@@ -1334,9 +1337,9 @@ function krpanoReady(krpanObj)
 		$('.chatDiv').hide();
 		
 		
-		$('#treaNum').off('click',function () {
-	
-			window.location.href = 'hc/chest';
+		$('.treaNum').on('click',function () {
+	alert(6);
+			//window.location.href = '';
 			
 		})
 		

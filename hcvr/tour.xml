@@ -156,7 +156,7 @@
 		 -->
 		 
 		 
-		 <layer name="test" url="img/1.jpg" align="center"
+		 <!--<layer name="test" url="img/1.jpg" align="center"
  
 			alpha="0" visible="false"
 			 
@@ -175,7 +175,7 @@
 				 
 				delayedcall(3,tween(layer[test].alpha,0);delayedcall(0.3,set(layer[test].visible,false)));
 				
-				"/>
+				"/>-->
 			
 		
 	
@@ -242,10 +242,10 @@
 		zorder="100"
 		keep="true"
 		x="0"
-		y="-80"
+		y="0"
 		align="center"
 		url="img/1.jpg"
-		scale="1"
+		scale="0.8"
 		alpha="0"
 		onloaded="tween(alpha,1.0);tween(layer[skin_title_pr].alpha,1.0);"
 		onclick="tween(layer[startpic_container].ox,-2500,1);
