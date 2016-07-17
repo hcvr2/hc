@@ -64,14 +64,14 @@
 			if(%1 != null, set(vr_aclk_timeout, %1), set(vr_aclk_timeout, 2000));
 			copy(vr_aclk_t1, timertick);
 			set(vr_aclk_waiting, true);
-			<!-- set(hotspot[vr_cursor].crop,'0|0|80|80');  -->
+			set(hotspot[vr_cursor].crop,'0|0|80|80');
 
 			asyncloop(vr_aclk_waiting,
 				sub(dt, timertick,vr_aclk_t1);
 
 				if(!hovering,
 					set(vr_aclk_waiting, false);
-					set(hotspot[vr_cursor].crop,'0|0|80|80');
+					<!-- set(hotspot[vr_cursor].crop,'0|0|80|80'); -->
 				  ,
 					div(f, dt, vr_aclk_timeout);
 					mul(f, 16);
@@ -79,7 +79,7 @@
 					Math.min(f, 16);
 					mul(f, 80);
 
-					txtadd(hotspot[vr_cursor].crop,get(f),'|0|80|80');
+					<!-- txtadd(hotspot[vr_cursor].crop,get(f),'|0|80|80'); -->
 
 					<!-- wait another 100ms delay after finishing the animation before doing the click -->
 					sub(dt, 100);
