@@ -47,7 +47,7 @@
 
 	<!-- the VR cursor hotspot -->
 	<hotspot name="vr_cursor" keep="true"
-	         
+	         url="webvr_cursor_80x80_17f.png"
 	         visible="false"
 	         enabled="false"
 	         distorted="true"
@@ -64,7 +64,7 @@
 			if(%1 != null, set(vr_aclk_timeout, %1), set(vr_aclk_timeout, 2000));
 			copy(vr_aclk_t1, timertick);
 			set(vr_aclk_waiting, true);
-			set(hotspot[vr_cursor].crop,'0|0|80|80');
+			<!-- set(hotspot[vr_cursor].crop,'0|0|80|80');  -->
 
 			asyncloop(vr_aclk_waiting,
 				sub(dt, timertick,vr_aclk_t1);
