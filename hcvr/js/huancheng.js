@@ -688,8 +688,12 @@ function getClickLotus (prizeName) {
 				break;
 				
 			case 2:
+				if(getFLowerCount>0){
+					getFLowerCount --;
+				}else{
+					getFLowerCount = 0;
+				}
 				
-				getFLowerCount --;
 				
 				$('.titbg').html('隐莲-1');
 				
