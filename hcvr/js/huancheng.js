@@ -120,10 +120,10 @@ constantScreenHeight = window.innerHeight;
 
 
 
-$('#clofri').on('click',function () {
+$('.closebtn').on('click',function () {
 	
 	
-	$('.friendsP').hide();
+	$('.friendsP,#clickShow').hide();
 									
 									
 		respondTxt = '正在返回大厅...';
@@ -605,12 +605,11 @@ document.addEventListener("showGameInfo", function (event) {
 function getClickLotus (prizeName) {
 	
 		console.log('总 采摘次数  totalCount  '+totalCount);
-	
-		if (totalCount < 5) {
+		if (totalCount <= 0) {
 			
 			// 不够次数，需要邀请好友  邀请好友弹窗
 				
-				respondTxt = ' OMG! 您的采摘次数已经没有了，邀请好友参与游戏，就可获得新的采摘次数哦！';
+				respondTxt = ' OMG！你可以寻找隐莲的机会已经用完了，快邀请好友一起来VR寻找隐莲，就可以获得额外机会哦！';
 				
 				$('#gobtn').text('邀请好友');
 				
@@ -644,7 +643,7 @@ function getClickLotus (prizeName) {
 				
 				// 不够次数，需要邀请好友  邀请好友弹窗
 				
-				respondTxt = ' OMG! 您的采摘次数已经没有了，'+'\n'+'邀请好友参与游戏，'+'\n'+'就可获得新的采摘次数哦！';
+				respondTxt = ' OMG！你可以寻找隐莲的机会已经用完了'+'\n'+'快邀请好友一起来VR寻找隐莲，'+'\n'+'就可以获得额外机会哦！';
 				
 				$('#gobtn').text('邀请好友');
 				
@@ -855,10 +854,12 @@ function showTxt (ifTriggerInvite) {
 	if (!ifTriggerInvite) {
 		
 		$('#gobtn').css('display','none');
+		$('#clofri2').css('display','none');
 		
 	} else {
 		
 		$('#gobtn').css('display','inline-block');
+		$('#clofri2').css('display','inline-block');
 		
 	}
 	
@@ -1342,7 +1343,7 @@ function krpanoReady(krpanObj)
 		
 		
 		$('.treaNum').on('click',function () {
-	alert(6);
+
 			//window.location.href = '';
 			
 		})
@@ -1392,7 +1393,7 @@ function krpanoReady(krpanObj)
 							    }
 							);*/
 							
-							respondTxt = ' OMG! 您的采摘次数已经没有了，'+'\n'+'邀请好友参与游戏，'+'\n'+'就可获得新的采摘次数哦！';
+							respondTxt = ' OMG！你可以寻找隐莲的机会已经用完了，'+'\n'+'快邀请好友一起来VR寻找隐莲，'+'\n'+'就可以获得额外机会哦！';
 				
 							$('#gobtn').text('邀请好友');
 							
@@ -1495,8 +1496,7 @@ function krpanoReady(krpanObj)
 							
 							
 							$('#yinlianNum').children('p').text(String( result.data.lotus ));
-							
-							
+							$('#treaNum').children('p').text(String( result.data.treasures ));
 							/*Lobibox.alert(
 							    'success', // Any of the following
 							    {
