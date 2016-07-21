@@ -200,22 +200,26 @@
 			</level>
 		</image>
 
-		<!-- place your scene hotspots here -->
-		<hotspot visible='flase' name="spot1" style="skin_yinlianstyle" ath="90.070" atv="15.687"  linkedscene = "www" />
-		<hotspot visible='flase' name="spot2" style="skin_yinlianstyle" ath="125.002" atv="23.456" linkedscene = "www" />
-		<hotspot visible='flase' name="spot3" style="skin_yinlianstyle" ath="-101.320" atv="7.184" linkedscene = "www" />
+		<!-- skin_yinlianstyle   skin_hotspotstyle    visible='false'-->
+		<hotspot visible='false' name="spot1" style="skin_yinlianstyle" ath="90.070" atv="15.687"  linkedscene = "www" />
+		<hotspot visible='false' name="spot2" style="skin_yinlianstyle" ath="125.653" atv="25.233" linkedscene = "www" />
+		<hotspot visible='false' name="spot3" style="skin_yinlianstyle" ath="-94.688" atv="1.780" linkedscene = "www" />
 		
-		<hotspot visible='flase' name="spot4" style="skin_yinlianstyle" ath="-53.847" atv="14.230" linkedscene="www" />
-		<hotspot visible='flase' name="spot5" style="skin_yinlianstyle" ath="-125.858" atv="11.256" linkedscene="www" />
-		<hotspot visible='flase' name="spot6" style="skin_yinlianstyle" ath="177.590" atv="19.866" linkedscene="www" />
+		<hotspot visible='false' name="spot4" style="skin_yinlianstyle" ath="-48.457" atv="14.844" linkedscene="www" />
+		<hotspot visible='false' name="spot5" style="skin_yinlianstyle" ath="-118.132" atv="6.649" linkedscene="www" />
+		<hotspot visible='false' name="spot6" style="skin_yinlianstyle" ath="177.590" atv="19.866" linkedscene="www" />
 		
-		<hotspot visible='flase' name="spot7" style="skin_yinlianstyle" ath="163.622" atv="5.638" linkedscene="www" />
-		<hotspot visible='flase' name="spot8" style="skin_yinlianstyle" ath="-161.381" atv="7.666" linkedscene="www" />
-		<hotspot visible='flase' name="spot9" style="skin_yinlianstyle" ath="70.323" atv="9.365" linkedscene="www" />
+		<hotspot visible='false' name="spot7" style="skin_yinlianstyle" ath="163.622" atv="5.638" linkedscene="www" />
+		<hotspot visible='false' name="spot8" style="skin_yinlianstyle" ath="-161.381" atv="7.666" linkedscene="www" />
+		<hotspot visible='false' name="spot9" style="skin_yinlianstyle" ath="70.323" atv="9.365" linkedscene="www" />
 		
-		<hotspot visible='flase' name="spot10" style="skin_yinlianstyle" ath="-12.519" atv="13.931" linkedscene="www" />
-		<hotspot visible='flase' name="spot11" style="skin_yinlianstyle" ath="107.829" atv="1.183" linkedscene="www" />
-		<hotspot visible='flase' name="spot12" style="skin_yinlianstyle" ath="-67.268" atv="4.752" linkedscene="www" />
+		<hotspot visible='false' name="spot10" style="skin_yinlianstyle" ath="-12.519" atv="13.931" linkedscene="www" />
+		<hotspot visible='false' name="spot11" style="skin_yinlianstyle" ath="107.829" atv="1.183" linkedscene="www" />
+		<hotspot visible='false' name="spot12" style="skin_yinlianstyle" ath="-67.268" atv="4.752" linkedscene="www" />
+		
+		<hotspot visible='false' name="spot13" style="skin_yinlianstyle" ath="-173.109" atv="0.274" linkedscene="www" />
+		<hotspot visible='false' name="spot14" style="skin_yinlianstyle" ath="-139.404" atv="15.493" linkedscene="www" />
+		<hotspot visible='false' name="spot15" style="skin_yinlianstyle" ath="45.143" atv="16.389" linkedscene="www" />
 
 	</scene>
 

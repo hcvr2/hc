@@ -452,8 +452,8 @@ html {
     right: 0;
     top: 0;
     bottom: 0;
-    width: 2.1rem;
-    height: 2.1rem;
+    width: 70%;
+    height: 40%;
     padding:0 .2em;
     background-size: 100% 100%;
     background-image: url(../img/gameInfo.png); no-repeat;	
@@ -484,13 +484,13 @@ html {
     max-width: .7rem;
     height: auto;
 }
-@media screen and (orientation: landscape) {    
+@media screen and (min-aspect-ratio: 13/8){    
 .gameInfo {
-    width: 1rem;
-    height: 1rem; 
+    width: 40%;
+    height: 60%; padding:0 .1em;
 }
 .gameInfo >p {
-    top: .3rem;
+    top: .25rem;
     font-size: .08rem;
 }
 #begin {
