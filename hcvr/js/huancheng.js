@@ -604,68 +604,6 @@ document.addEventListener("showGameInfo", function (event) {
 
 function getClickLotus (prizeName) {
 
-	console.log('总 采摘次数  totalCount  '+totalCount);
-	if (totalCount <= 0) {
-		// 不够次数，需要邀请好友  邀请好友弹窗
-
-		respondTxt = ' OMG！你可以寻找隐莲的机会已经用完了，快邀请好友一起来VR寻找隐莲，就可以获得额外机会哦！';
-
-		$('#gobtn').text('邀请好友');
-
-		showTxt(true);
-
-		return;
-
-	}
-
-	playCount++;
-
-
-	if (playCount == 6) {
-
-
-		if (leftCount == 0) {
-
-
-			leftCount = totalCount - ( playCount - 1);
-
-		} else {
-
-			leftCount = leftCount - ( playCount - 1 );
-
-		}
-
-		console.log('剩余 采摘次数  leftCount  '+leftCount);
-
-
-		if (leftCount < 5) {
-
-			// 不够次数，需要邀请好友  邀请好友弹窗
-
-			respondTxt = ' OMG！你可以寻找隐莲的机会已经用完了'+'\n'+'快邀请好友一起来VR寻找隐莲，'+'\n'+'就可以获得额外机会哦！';
-
-			$('#gobtn').text('邀请好友');
-
-			showTxt(true);
-
-			return;
-
-		} else {
-
-			playCount = 0;
-
-			respondTxt = '这一轮的采摘已经结束，您可以再玩一次！';
-
-			$('#gobtn').text('再玩一次');
-
-			showTxt(true);
-
-			return;
-
-		}
-
-	}
-
 
 	//				simulateClickResult = 4;
 
@@ -1411,7 +1349,70 @@ function krpanoReady(krpanObj)
 
 
 	document.addEventListener("updateClick", function (event) {
-
+		
+		
+		console.log('总 采摘次数  totalCount  '+totalCount);
+	
+		if (totalCount <= 0) {
+			// 不够次数，需要邀请好友  邀请好友弹窗
+	
+			respondTxt = ' OMG！你可以寻找隐莲的机会已经用完了，快邀请好友一起来VR寻找隐莲，就可以获得额外机会哦！';
+	
+			$('#gobtn').text('邀请好友');
+	
+			showTxt(true);
+	
+			return;
+	
+		}
+	
+		playCount++;
+	
+	
+		if (playCount == 6) {
+	
+	
+			if (leftCount == 0) {
+	
+	
+				leftCount = totalCount - ( playCount - 1);
+	
+			} else {
+	
+				leftCount = leftCount - ( playCount - 1 );
+	
+			}
+	
+			console.log('剩余 采摘次数  leftCount  '+leftCount);
+	
+	
+			if (leftCount < 5) {
+	
+				// 不够次数，需要邀请好友  邀请好友弹窗
+	
+				respondTxt = ' OMG！你可以寻找隐莲的机会已经用完了'+'\n'+'快邀请好友一起来VR寻找隐莲，'+'\n'+'就可以获得额外机会哦！';
+	
+				$('#gobtn').text('邀请好友');
+	
+				showTxt(true);
+	
+				return;
+	
+			} else {
+	
+				playCount = 0;
+	
+				respondTxt = '这一轮的采摘已经结束，您可以再玩一次！';
+	
+				$('#gobtn').text('再玩一次');
+	
+				showTxt(true);
+	
+				return;
+	
+			}
+	
+		}
 
 		if (IF_NET) {
 
@@ -1427,6 +1428,7 @@ function krpanoReady(krpanObj)
 					 msg:result.msg
 					 }
 					 );*/
+					
 
 					respondTxt = ' OMG！你可以寻找隐莲的机会已经用完了，'+'\n'+'快邀请好友一起来VR寻找隐莲，'+'\n'+'就可以获得额外机会哦！';
 
@@ -1449,7 +1451,7 @@ function krpanoReady(krpanObj)
 					simulateClickResult = result.data.type;
 
 
-					//									totalCount = result.data.tickets;
+//									totalCount = result.data.tickets;
 
 
 					if (simulateClickResult == 4) {
