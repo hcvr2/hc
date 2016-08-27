@@ -105,9 +105,6 @@
 	        onexitvr="webvr_onexitvr(); webvr_setup();"
 	        />
 	
-	<!--<action name = >-->
-		
-	</action>        
 
 	<!-- webvr button style (adjust to match default skin style) -->
 	<style name="webvr_button_style"
