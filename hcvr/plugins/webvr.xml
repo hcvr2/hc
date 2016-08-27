@@ -107,11 +107,11 @@
 	</action>
 	
 
-	<!-- by pressing SPACE the Oculus Rift could be re-centered -->
+	<!-- by pressing SPACE the Oculus Rift could be re-centered 
 	<events name="webvr_events" devices="html5" keep="true"
 	        onkeydown="if(webvr AND webvr.isenabled AND keycode==32, webvr.resetSensor(0) );"
 	        onmousedown="if(webvr AND webvr.isenabled, webvr_showbuttons() );"
-	        />
+	        />-->
 
 
 	<!-- when WebVR support is available show an EnterVR button -->
