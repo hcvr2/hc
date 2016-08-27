@@ -106,10 +106,6 @@
 		  );
 	</action>
 	
-	<action name="vr_click">
-		onclick();
-		trace('vr_click');
-	</action>	
 
 	<!-- by pressing SPACE the Oculus Rift could be re-centered -->
 	<events name="webvr_events" devices="html5" keep="true"
