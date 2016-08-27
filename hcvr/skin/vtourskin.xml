@@ -96,14 +96,19 @@
 	<plugin name="WebVR" keep="true" devices="html5"
 		
 			mobilevr_touch_support="true"
-	        multireslock.desktop="true"
-    		multireslock.mobile.or.tablet="true"
 	        mobilevr_fake_support="true"
 	        
-	        onavailable="removelayer(webvr_enterbutton); skin_arrange_buttons(); webvr_onavailable();"
+	        multireslock.desktop="true"
+    		multireslock.mobile.or.tablet="true"
+	        
+	        onavailable="removelayer(webvr_enterbutton); removelayer(webvr_exitbutton); removelayer(webvr_setupbutton); skin_arrange_buttons(); webvr_onavailable();"
 	        onentervr="skin_showloading(false); webvr_onentervr(); webvr_setup();"
 	        onexitvr="webvr_onexitvr(); webvr_setup();"
 	        />
+	
+	<!--<action name = >-->
+		
+	</action>        
 
 	<!-- webvr button style (adjust to match default skin style) -->
 	<style name="webvr_button_style"
