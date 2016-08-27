@@ -519,9 +519,9 @@ $('#begin').on('click', function () {
 		
 		$('body').on('click', function () {
 			
-			krpano.call('vr_auto_click(get(vr_timeout))');
+			krpano.call('vrClick');
 			
-			console.log('vr_auto_click');
+			console.log('vrClick');
 			
 		});
 	
