@@ -97,7 +97,6 @@
 		
 			mobilevr_touch_support="true"
 	        mobilevr_fake_support="true"
-	        
 	        multireslock.desktop="true"
     		multireslock.mobile.or.tablet="true"
 	        
