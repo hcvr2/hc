@@ -517,13 +517,13 @@ $('#begin').on('click', function () {
 		krpano.call("webvr.enterVR()");
 		
 		
-/*		$('body').on('click', function () {
+		$('body').on('click', function () {
 			
-			krpano.call('vr_auto_click(get(vr_timeout))');
+			krpano.call('webvr.onclick()');
 			
 			console.log('vr_auto_click');
 			
-		});*/
+		});
 	
 		
 	}
