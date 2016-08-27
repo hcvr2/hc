@@ -519,7 +519,7 @@ $('#begin').on('click', function () {
 		
 		$('body').on('click', function () {
 			
-			krpano.call('webvr.onclick()');
+			krpano.call('vr_auto_click');
 			
 			console.log('vr_auto_click');
 			
