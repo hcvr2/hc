@@ -516,14 +516,15 @@ $('#begin').on('click', function () {
 		
 		krpano.call("webvr.enterVR()");
 		
+		krpano.set('vr_timeout', 1000);
 		
-		$('body').on('click', function () {
+		/*$('body').on('click', function () {
 			
 			krpano.call('vrClick');
 			
 			console.log('vrClick');
 			
-		});
+		});*/
 	
 		
 	}
