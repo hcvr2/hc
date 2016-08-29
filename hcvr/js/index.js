@@ -1,5 +1,5 @@
 var $messages = $('.messages-content'),
-    d, h, m,
+    d, h, m, i, chatPngNum = 0, continueChat = {},
     i = 0;
 
 /*$(window).load(function() {
@@ -121,9 +121,9 @@ var Fake = [
 // 调取 获取留言接口
 function fakeMessage() {
 	
-	$('<div class="message loading new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+	/*$('<div class="message loading new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
 							  
-  	updateScrollbar();
+  	updateScrollbar();*/
 							
   	if (IF_NET) {
 											
@@ -134,36 +134,97 @@ function fakeMessage() {
 						if (result.code != 10000) {
 							
 							
-							Lobibox.alert(
+							/*Lobibox.alert(
 							    'error', // Any of the following
 							    {
 							        msg:result.msg
 							    }
-							);
+							);*/
 						
 						
 						} else {
 							
 							
-							Lobibox.alert(
+							/*Lobibox.alert(
 							    'success', // Any of the following
 							    {
 							        msg:'调取 获取留言 接口 成功  '
 							    }
-							);
+							);*/
 							
 							  /*if ($('.message-input').val() != '') {
 							    return false;
 							  }*/
 							 
-						    $('.message.loading').remove();
+//						    $('.message.loading').remove();
 							 
-							for (var i = 0; i < result.data.length; i++) {
+							
+//							chatPngNum = result.data.length;
+
+							
+							canvasChat:for (var i = 0; i < result.data.length; i++) {
 								
-								var chatShow = '<div class="chatShow"><div class="userPic"><img id="atvPic" class="clip-circle user" /></div><div class="chatContent">asdfsdfdf</div></div>'
+								
+								/*$('.atvPic').attr('src', result.data[i].avatar_large);
+								
+								
+								$('.chatContent').html( result.data[i].msg );*/
+								
+								
+								var chatShow = '<div id="chatPng'+i+'" sytle="top: '+i*0.0005+'rem; left: '+i*0.05+'rem;" class="chatShow"><div class="userPic"><img id="atvPic" src="'+ result.data[i].avatar_large +'" class="clip-circle user chatPng" /></div><div class="chatContent">'+ result.data[i].screen_name + ' : ' + result.data[i].msg +'</div></div>'
+								
+								$('#chatContainer').append(chatShow);
+								
+								
+//								$('#chatContainer').html(chatShow);
 								
 								
 //							    $('<div class="message new"><figure class="avatar"><img src="'+ result.data[i].avatar_large +'" /></figure>' + result.data[i].msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+							    
+							    
+							    /*$('#chatPng'+i+' #atvPic').waitForImages(function() {
+							    	
+								    // All descendant images have loaded, now slide up.
+								    html2canvas( $('#chatPng'+i), {
+							    	
+										onrendered: function (canvas) {
+											
+											 chatPngNum++;
+									
+											 var imgageData = canvas.toDataURL("image/png");
+										
+											 krpano.call("addhotspot(chatPng'"+chatPngNum+"');set(hotspot[chatPng'"+chatPngNum+"'].url,'"+ imgageData + "');set(hotspot[chatPng'"+chatPngNum+"'].ath,'"+(Math.random()*100+chatPngNum)+"');set(hotspot[chatPng'"+i+"'].atv,'"+(Math.random()*100-chatPngNum)+"')");
+										
+											 console.log('render chatPng  '+chatPngNum);
+										
+											 console.log('imgageData  '+imgageData);
+										
+											 var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+										
+											 console.log('newData  '+newData);
+											 
+	//										 html2canvas.dispatchEvent('continuePng');
+									
+										}
+							
+									});
+									
+								});*/
+							    
+							    
+								
+								/*if (!html2canvas.hasEventListener('continuePng')) {
+									
+										html2canvas.addEventListener('continuePng', function () {
+										
+										 	continue canvasChat;
+										
+										});
+									
+								}*/
+								
+//								break;
+								
 							    
 							    /*html2canvas( $('.message new'), {
 		    	
@@ -191,12 +252,49 @@ function fakeMessage() {
 						             }
 					         	});*/
 							    
-							    setDate();
+							    /*setDate();
 							    
-							    updateScrollbar();
+							    updateScrollbar();*/
 								
-							} 
-						    
+							}
+							
+							
+							/*setTimeout(function () {
+								
+							   
+							   html2canvas( $('#chatContainer'), {
+							    	
+										onrendered: function (canvas ) {
+											
+											 chatPngNum++;
+									
+											 var imgageData = canvas.toDataURL("image/png");
+										
+											 krpano.call("addhotspot(chatPng'"+chatPngNum+"');set(hotspot[chatPng'"+chatPngNum+"'].url,'"+ imgageData + "');set(hotspot[chatPng'"+chatPngNum+"'].ath,'"+(Math.random()*100+chatPngNum)+"');set(hotspot[chatPng'"+i+"'].atv,'"+(Math.random()*100-chatPngNum)+"')");
+										
+											 console.log('render chatPng  '+chatPngNum);
+										
+											 console.log('imgageData  '+imgageData);
+										
+											 var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+										
+											 console.log('newData  '+newData);
+											 
+	//										 html2canvas.dispatchEvent('continuePng');
+									
+										}
+							
+									});
+								
+								
+							}, 1000);*/
+							
+							
+//							i = result.data.length;
+//							
+//							console.log('i  '+i);
+							
+							
 							  
 						}
 						

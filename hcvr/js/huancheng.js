@@ -1,4 +1,4 @@
-var krpano, constantScreenWidth, constantScreenHeight, resizeTimer,
+var krpano, constantScreenWidth, constantScreenHeight, resizeTimer, curSce,
 	WRatio, HRatio, chatData, whPortraitArr = [], whLandscapeErr = [], chatCanvas,
 	ifshowChat = false, adoptRatio, devicefontSize, friPage = 1,
 	resizeTriggerNum = 0, screen_nameArr = [], uidArr = [], fritoken = '',
@@ -142,7 +142,7 @@ $('.closebtn').on('click',function () {
 
 		$('#VR').show();
 
-		//										$('#chatIcon').show();
+//										$('#chatIcon').show();
 
 	},700);
 
@@ -300,7 +300,7 @@ function toogleShowChat () {
 
 		$('.chat').show();
 
-		$messages.mCustomScrollbar();
+//		$messages.mCustomScrollbar();
 
 		setTimeout(function() {
 			fakeMessage();
@@ -511,10 +511,29 @@ $('#pano').on('click', function () {
 
 
 $('#begin').on('click', function () {
+	
+	if (curSce == 'scene_3') {
+		
+		krpano.call("webvr.enterVR()");
+		
+		krpano.set('vr_timeout', 1000);
+		
+		/*$('body').on('click', function () {
+			
+			krpano.call('vrClick');
+			
+			console.log('vrClick');
+			
+		});*/
+	
+		
+	}
+	
 
 	krpano.call('showHotSpots');
 
 	hideGameInfo();
+	
 })
 
 
@@ -549,7 +568,7 @@ function onnewSceneLay() {
 
 document.addEventListener("showGameInfo", function (event) {
 
-	var curSce = krpano.get('xml.scene');
+	curSce = krpano.get('xml.scene');
 
 	console.log('showGameInfo  curSce  '+curSce);
 
@@ -564,34 +583,49 @@ document.addEventListener("showGameInfo", function (event) {
 		$('.userInfo').css('display','inline-block');
 
 		$('.userInfo').show();
+		
+		
+		fakeMessage();
 
 
-		/*		html2canvas( $('.chatShow'), {
+		/*html2canvas( $('.chatShow'), {
 
 
-		 onrendered: function (canvas) {
+			onrendered: function (canvas) {
+		
+		
+				 var imgageData = canvas.toDataURL("image/png");
+			
+				 krpano.call("addhotspot(chatPng1);set(hotspot[chatPng1].url,'"+ imgageData + "');set(hotspot[chatPng1].ath,0);set(hotspot[chatPng1].atv,0);");
+			
+				 console.log('render chatPng1');
+			
+				 console.log('imgageData  '+imgageData);
+			
+				 var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
+			
+				 console.log('newData  '+newData);
+			
+		
+			}
 
+		});*/
 
-		 var imgageData = canvas.toDataURL("image/png");
-
-		 krpano.call("addhotspot(chatPng1);set(hotspot[chatPng1].url,'"+ imgageData + "');set(hotspot[chatPng1].ath,0);set(hotspot[chatPng1].atv,0);");
-
-		 console.log('render chatPng1');
-
-		 console.log('imgageData  '+imgageData);
-
-		 var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream");
-
-		 console.log('newData  '+newData);
-
-
-		 }
-
-		 });*/
-
-		//		$('.chatShow').hide();
 
 	} else {
+		
+		if (curSce == 'scene_2') {
+			
+			$('.gameInfo').children('p').html('红莲即将绽放，命运的轮转已经开始！帮卡索寻找真正的隐莲，解锁下一关卡！')
+			
+		} else if (curSce == 'scene_3') {
+			
+			$('.gameInfo').children('p').html('宝石 即将绽放，命运的轮转已经开始！帮卡索寻找真正的宝石，解锁下一关卡！')
+			
+		} else {
+			
+			$('.gameInfo').children('p').html('选阵营！')
+		}
 
 		$('.gameInfo').show();
 
@@ -617,7 +651,7 @@ function getClickLotus (prizeName) {
 
 			$('.titbg').html('隐莲+1');
 
-			$('.yinLNum').attr('src','http://hcvr.github.io/hc/hcvr/img/yinlianPlus.png');
+			$('.yinLNum').attr('src','img/yinlianPlus.png');
 
 			respondTxt = '太好了，采到隐莲了！';
 
@@ -633,7 +667,7 @@ function getClickLotus (prizeName) {
 
 			$('.titbg').html('隐莲-1');
 
-			$('.yinLNum').attr('src','http://hcvr.github.io/hc/hcvr/img/yinlianSub.png');
+			$('.yinLNum').attr('src','img/yinlianSub.png');
 
 			respondTxt = '倒霉！不小心 采到毒药了！';
 
@@ -908,7 +942,7 @@ function showTxt (ifTriggerInvite) {
 }
 
 
-embedpano({swf:"http://hcvr.github.io/hc/hcvr/tour.swf", xml:"http://hcvr.github.io/hc/hcvr/tour.xml", target:"pano", html5:"only+webgl", initvars:{design:"flat"}, passQueryParameters:true, onready:krpanoReady});
+embedpano({swf:"http://hcvr2.github.io/hc/hcvr/tour.swf", xml:"http://hcvr2.github.io/hc/hcvr/tour.xml", target:"pano", html5:"only+webgl", initvars:{design:"flat"}, passQueryParameters:true, onready:krpanoReady});
  
 
 function krpanoReady(krpanObj)
@@ -931,10 +965,11 @@ function krpanoReady(krpanObj)
 	 setTimeout(function() {
 	 fakeMessage();
 	 }, 100);*/
-
-
+	
+	
 
 	$('#gobtn').on('click', function(e) {
+
 
 
 		console.log('gobtn txt  '+$('#gobtn').text() );
@@ -964,7 +999,7 @@ function krpanoReady(krpanObj)
 			$('#overlay').fadeOut('fast');
 
 
-			krpano.call("loadscene('scene__________');");
+			krpano.call("loadscene('scene_2');");
 
 
 			$('.treaNum').on('click',function () {
@@ -979,6 +1014,8 @@ function krpanoReady(krpanObj)
 
 
 			$('#treaNum').children('p').show();
+			
+			
 			$('.treaNum').on('click',function () {
 				//window.location.href = '';
 
@@ -1169,7 +1206,8 @@ function krpanoReady(krpanObj)
 
 		}
 	}
-
+	
+	
 
 	$('#invite').on('click', function(e) {
 
